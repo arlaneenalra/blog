@@ -1,10 +1,11 @@
 baseURL = "https://chrissalch.com/"
 languageCode = "en-us"
-title = "f(x) = x"
+title = "Chris Salch"
 theme = "hermit"
 
 [params]
   homeSubtitle = "The identity function."
+  customCSS = [ "css/blog.css" ]
 
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
@@ -19,5 +20,17 @@ theme = "hermit"
     url = "https://twitter.com/arlaneenalra"
   [[params.social]]
     name = "linkedin"
-    url = ""https://www.linkedin.com/in/chris-salch-94a6784/
+    url = "https://www.linkedin.com/in/chris-salch-94a6784/"
+
+[menu]
+  [[menu.main]]
+    name = "Books (fiction)"
+    url = "https://www.facebook.com/author.christophersalch/"
+  [[menu.main]]
+    name = "Art"
+    url = "https://www.facebook.com/artist.christophersalch/"
+  [[menu.main]]
+    name = "Old Blog"
+    url = "old-blog/"
+
 
