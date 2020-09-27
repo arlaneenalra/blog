@@ -1,6 +1,23 @@
-baseURL = "http://example.org/"
+baseURL = "https://chrissalch.com/"
 languageCode = "en-us"
 title = "f(x) = x"
-theme = "dimension"
+theme = "hermit"
 
+[params]
+  homeSubtitle = "The identity function."
+
+  # Social Icons
+  # Check https://github.com/Track3/hermit#social-icons for more info.
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/arlaneenalra"
+  [[params.social]]
+    name = "instagram"
+    url = "https://www.instagram.com/arlaneenalra/"
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/arlaneenalra"
+  [[params.social]]
+    name = "linkedin"
+    url = ""https://www.linkedin.com/in/chris-salch-94a6784/
 
