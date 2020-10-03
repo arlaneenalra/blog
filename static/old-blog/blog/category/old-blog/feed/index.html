@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+>
+
+<channel>
+	<title>Old Blog &#8211; f(x)=x</title>
+	<atom:link href="https://chrissalch.com/blog/category/old-blog/feed/" rel="self" type="application/rss+xml" />
+	<link>https://chrissalch.com</link>
+	<description>The identity function</description>
+	<lastBuildDate>Tue, 15 May 2012 18:25:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.7</generator>
+<site xmlns="com-wordpress:feed-additions:1">37371501</site>	<item>
+		<title>Converting 2DA Files to Something More Useful &#8211; RePost</title>
+		<link>https://chrissalch.com/blog/2009/04/05/converting-2da-files-to-something-more-useful-repost/</link>
+				<comments>https://chrissalch.com/blog/2009/04/05/converting-2da-files-to-something-more-useful-repost/#respond</comments>
+				<pubDate>Sun, 05 Apr 2009 16:46:40 +0000</pubDate>
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+				<category><![CDATA[Old Blog]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Software Archaeology]]></category>
+
+		<guid isPermaLink="false">http://chrissalch.com/?p=129</guid>
+				<description><![CDATA[Note:This is something I wrote way back in April of 2009 on my blog at kc5vzm.com.  While checking on google analytics, I noticed that the old link was still being referenced and decided that I should probably do something to keep it live, at least for the moment.  So, here you go! A friend of [&#8230;]]]></description>
+								<content:encoded><![CDATA[<p><em><strong>Note:</strong>This is something I wrote way back in April of 2009 on my blog at kc5vzm.com.  While checking on google analytics, I noticed that the old link was still being referenced and decided that I should probably do something to keep it live, at least for the moment.  So, here you go!</em></p>
+<p>A friend of mine mentioned he had problem that I might be able to help him with. He had 575 data files on a somewhat lax format. In fact, the disparities between various data files would seem to indicate that the files were hand written rather than generated using a tool or specialized editor. The large number of file and relative inefficiency of dealing with them in their native formats brings up the question of alternative means to store the data. Said friend happens to be able to talk to a <a href="http://www.mysql.com">MySql</a> database from within the <a href="http://nwn.bioware.com/">Never Winter Nights</a> scripting language. To make a long story short my friend asked for a tool to take his collection of 575 2DA files and convert them into an SQL script which could be loaded into a MySql database. So, that&#8217;s exactly what I gave him.</p>
+<p>Besides being a reasonably simple task to accomplish, this project gave me a chance to take a look at a very simple <a href="http://maven.apache.org/">Maven</a> managed build. The request was for a java tool specifically (my first choice for something of this nature would have been PERL) to allow for ease of distribution and portability. C/C++ while reasonably portable if you have a sane build system, compiler, and know a touch about what you are doing require that the end user either be given binaries or have a similar sane build system, compiler, and know what you were attempting to do. PERL, which is significantly more portable and provides a reasonably common runtime environment, has a high barrier to entry on the Windows platform. There are some nice <a href="http://www.activestate.com/activeperl/">commercial installs</a> and a few open source projects, such as <a href="http://strawberryperl.com/">Strawberry PERL</a> or <a href="http://vanillaperl.com/">Vanilla PERL</a>, but that is a little much for the average user. Java, the hulking beast that it is, runs just about anywhere with very little prodding, exists on most Windows based systems and is not very difficult to get on UNIX, and will do most of what was needed.</p>
+<p>The goals of this particular project are relatively simple:</p>
+<ul>
+<li>Convert a valid Bioware 2DA file or directory of files into a reasonable SQL script.</li>
+<li>Create appropriate tables within the SQL database to match the contents of the 2DA file.</li>
+<li>Create a load script to load data into the created tables.</li>
+</ul>
+<p>I had a few other things that I would have liked to and still may find a way to pull into the project latter on. Unfortunately, about four hours of the time that I meant to be coding was occupied in the vain attempt to counter act a rather nasty headache. When my head finally did clear up, time constraints left a few of my planed features, a nice &#8216;Wizard&#8217; or &#8216;Druid&#8217; like GUI, laying on the chopping room floor. Besides, command line apps are so much simpler to use in the long run and graphical apps are such a GUI mess. (:wink:)</p>
+<p>For those who are terribly interested in seeing some code I will later deny to have written, you can take a look at the <a href="http://git.kc5vzm.com/?p=2daLoader.git;a=summary">git</a> repository. This is barely something that I would consider an alpha. Really and truthfully, it is more of a proof of concept in dire need or refactoring/design to make it more than trivially useful.</p>
+<p>The 2DA file specification is available from Bioware via the following <a href="http://nwn.bioware.com/developers/">link</a>, towards the bottom of the page. Unfortunately, the data I was given as an example, does not match the specification very well. The specification states:</p>
+<ul>
+<li>The first row contains a string specifying the 2DA version, &#8216;2DA V2.0&#8217; for the files I was given.</li>
+<li>The second line should contain nothing or an optional &#8216;DEFAULT:&#8217; value clauses to be provided when the requested row does not exist.</li>
+<li>The third line contains column names separated by white space with the first column, an index column, ignored. While not explicitly stated, it appears that there must be at least one space to delineate the first column.</li>
+<li>From the fourth line each line consists of white space delimited columns.</li>
+<li>Values in the data set that contain spaces must be quoted with the &#8216;&#8221;&#8216; character.</li>
+<li> &#8216;****&#8217; is treated as a special data value similar to a database null.</li>
+<li>The index column is re-indexed by the existing game tools.</li>
+</ul>
+<p>While significantly simplified, that about covers the relevant parts of the specification. In reality, the data set I was given as a test didn&#8217;t quite match this in several aspects. Here are a few of the more annoying things that I discovered:</p>
+<ul>
+<li>The furthest right data column appears to be allowed to contain spaces without quoting.</li>
+<li>Five &#8216;*&#8217; characters are sometimes used rather than four.</li>
+<li>A row containing now column data but an index appears to be ignored.</li>
+</ul>
+<p>If the data files I was handed are actually used as was described the parsing code used is very lax about data validation. Really and truly, this is more of a curse than anything else. Lack of data validation will lead to more problems in the long run than letting your developers build crappy content files. Real systems have a tendency to be annoying that way.</p>
+<p>Parsing out this kind of data is not really all that difficult. Most of the parsing can be handled by the java.lang.String.split function and an amazingly short regular expression. Dealing with quoted strings is a little more difficult and required looping through a character array to parse properly. I&#8217;m pretty sure there is a better way to accomplish that part but, as stated, this code is little better than a proof of concept. Thankfully, none of the data set I was dealing with had any DEFAULT clauses to deal with and this code ignores that feature.</p>
+<p>Once the entire dataset for a file is loaded into an internal representation, SQL generation is accomplished via simple string combination with a little sanitizing for the &#8216; character and strange column names (&#8216;%&#8217;). The current implementation takes this one step further and parse a directory of 2DA files, loading them all into memory at one time. This is definitely not an ideal situation and will eventually be corrected. The data set really should be parsed one file at a time to avoid potential issues with memory usage.</p>
+<p>Unfortunately, I don&#8217;t have a good way to avoid loading the entirety of a single file right now. The code is attempting to make guesses about data types based on the data it finds in a given column. If all of the data in a column is parsable by Integer.parseInt then the column is considered to be an SQL INTEGER. If all of the data in a column is parsable by Double.paresDouble then that column is considered to be an SQL DECIMAL. If neither of those are true or every value in the column is the special null string then the column is considered to be a VARCHAR with a size equal to the longest value in the column. This is definitely very crude and possibly error prone. It does seem to produce a loadable script with the current test data set though.</p>
+<p><em><strong>Note:</strong>For anyone interested in actually using this monstrosity you are perfectly welcome to do so. Just keep in mind that I don&#8217;t make any promises about the quality of this code or the resultant data set. If you do come across a bug, feel free to drop a line to <a href="mailto:emeraldd.chris@gmail.com">emeraldd.chris@gmail.com</a> with <strong>2daLoader</strong> in the subject line and I&#8217;ll see what can be done. A binary version of the file can be downloaded from:<br />
+</em><br />
+<a href="http://chrissalch.com/wp-content/uploads/2012/05/2daLoader-1.0-SNAPSHOT-jar-with-dependencies.zip">2daLoader-1.0-SNAPSHOT-jar-with-dependencies</a></p>
+<p>Since Jar files are in actuality just crafted zip files, my CMS is currently treating them as zip files. This means that you will need to change the file extension back to .jar when you download the file. I hope to have this little issue corrected sometime soon though.</p>
+<p>To run the application, just start a command window and enter a command line similar to this:</p>
+<pre class="brush: bash; title: ; notranslate">
+ java -jar 2daLoader-1.0-SNAPSHOT.jar &lt;path to directory containing 2da files&gt;
+</pre>
+<p>After pressing return, you should see a large number of logging lines scrolling by telling more than you ever wanted to know about what the application is doing. Keep in mind, this can take a long time for a large number of files. If it does not work as expected, make sure you have entered the correct file and path names. The current version will produce an output file name <strong>buildSql.sql</strong> in the current directory. One of the things I&#8217;d like to add latter is a means of specifying the output file.</p>
+<p>In any event, have fun!</p>
+]]></content:encoded>
+							<wfw:commentRss>https://chrissalch.com/blog/2009/04/05/converting-2da-files-to-something-more-useful-repost/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						<post-id xmlns="com-wordpress:feed-additions:1">129</post-id>	</item>
+	</channel>
+</rss>

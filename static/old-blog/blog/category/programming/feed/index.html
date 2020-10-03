@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+>
+
+<channel>
+	<title>Programming &#8211; f(x)=x</title>
+	<atom:link href="https://chrissalch.com/blog/category/programming/feed/" rel="self" type="application/rss+xml" />
+	<link>https://chrissalch.com</link>
+	<description>The identity function</description>
+	<lastBuildDate>Fri, 04 Dec 2015 04:04:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.2.7</generator>
+<site xmlns="com-wordpress:feed-additions:1">37371501</site>	<item>
+		<title>My New Hat!</title>
+		<link>https://chrissalch.com/blog/2014/02/13/my-new-hat/</link>
+				<comments>https://chrissalch.com/blog/2014/02/13/my-new-hat/#respond</comments>
+				<pubDate>Fri, 14 Feb 2014 03:39:46 +0000</pubDate>
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+				<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Random Thoughts]]></category>
+
+		<guid isPermaLink="false">http://chrissalch.com/?p=643</guid>
+				<description><![CDATA[I picked this up at the Austin PHP meetup:]]></description>
+								<content:encoded><![CDATA[<p>I picked this up at the <a title="Austin PHP" href="http://www.meetup.com/austinphp/" target="_blank">Austin PHP</a> meetup:</p>
+<div id="attachment_642" style="width: 550px" class="wp-caption aligncenter"><a href="https://chrissalch.com/wp-content/uploads/2014/02/wpid-wp-1392347879134.png"><img aria-describedby="caption-attachment-642" class=" wp-image-642 " alt="Me in a Mail Chimp Hat!" src="https://chrissalch.com/wp-content/uploads/2014/02/wpid-wp-1392347879134.png" width="540" height="405" /></a><p id="caption-attachment-642" class="wp-caption-text">My New Hat!</p></div>
+]]></content:encoded>
+							<wfw:commentRss>https://chrissalch.com/blog/2014/02/13/my-new-hat/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						<post-id xmlns="com-wordpress:feed-additions:1">643</post-id>	</item>
+		<item>
+		<title>Playing With Bookmarklets</title>
+		<link>https://chrissalch.com/blog/2013/06/11/playing-with-bookmarklets/</link>
+				<comments>https://chrissalch.com/blog/2013/06/11/playing-with-bookmarklets/#respond</comments>
+				<pubDate>Tue, 11 Jun 2013 21:18:34 +0000</pubDate>
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+				<category><![CDATA[Programming]]></category>
+		<category><![CDATA[litreactor]]></category>
+
+		<guid isPermaLink="false">http://chrissalch.com/?p=563</guid>
+				<description><![CDATA[Every so often I&#8217;ve found myself wanting to link to a specific comment over on LitReactor. Unfortunately, while they have in page anchors, there is no easy way to get at a link to them. Having fought with developer tools tracking down the right anchor element one too many times, I decided to throw this [&#8230;]]]></description>
+								<content:encoded><![CDATA[<p>Every so often I&#8217;ve found myself wanting to link to a specific comment over on <a href="http://litreactor.com" target="_blank">LitReactor.</a> Unfortunately, while they have in page anchors, there is no easy way to get at a link to them. Having fought with developer tools tracking down the right anchor element one too many times, I decided to throw this little toy together right quick:</p>
+<pre class="brush: jscript; title: ; notranslate">
+javascript:(function () {
+    var comment_container = $('#comments');
+    var comments = $('div.comment', comment_container);
+    var anchors = $('a[id~=comment]', comment_container);
+
+    for (var i = 0; i &lt; anchors.length; i++) {
+        var anchor = $(anchors[i]);
+        var comment = $(comments[i]);
+
+        var href = window.location.href + '#' + anchor.attr('id');
+
+        $('.comment-content .comment-meta a:first-child ', comment).before(
+            '&lt;a href=&quot;' + href + '&quot;&gt; # &lt;/a&gt;'
+        );
+    }
+})();
+</pre>
+<p>And here it is as a link: <a id="litreactor-bookmarklet" style="display: none;" href="/">LitReactor: Add Comment Links</a></p>
+<p>Keep in mind, this is just a toy! No warranties, use at your own risk etc!</p>
+<p><script type="text/javascript">// <![CDATA[
+jQuery(function($) {   $('#litreactor-bookmarklet').attr('href', "javascript:(function () { var comment_container = $('#comments'); var comments = $('div.comment', comment_container); var anchors = $('a[id~=comment]', comment_container); for (var i = 0; i < anchors.length; i++) { var anchor = $(anchors[i]); var comment = $(comments[i]); var href = window.location.href + '#' + anchor.attr('id'); $('.comment-content .comment-meta a:first-child ', comment).before( '<a href=\"' + href + '\">&nbsp;#&nbsp;</a>'); } })();").show(); });
+// ]]&gt;</script></p>
+]]></content:encoded>
+							<wfw:commentRss>https://chrissalch.com/blog/2013/06/11/playing-with-bookmarklets/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						<post-id xmlns="com-wordpress:feed-additions:1">563</post-id>	</item>
+		<item>
+		<title>MySQL Backup Script</title>
+		<link>https://chrissalch.com/blog/2012/04/24/mysql-backup-script/</link>
+				<comments>https://chrissalch.com/blog/2012/04/24/mysql-backup-script/#respond</comments>
+				<pubDate>Tue, 24 Apr 2012 17:05:05 +0000</pubDate>
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+				<category><![CDATA[Programming]]></category>
+
+		<guid isPermaLink="false">http://chrissalch.com/?p=79</guid>
+				<description><![CDATA[Here&#8217;s an updated version of my MySQL backup script from a while back. I&#8217;m playing with a syntax highlighter to make things a little easier to read. Eventually I&#8217;ll get this junk over on github.]]></description>
+								<content:encoded><![CDATA[<p>Here&#8217;s an updated version of my <a href="http://chrissalch.com/?page_id=16" title="Mysql Backup Script">MySQL backup script</a> from a while back.  I&#8217;m playing with a syntax highlighter to make things a little easier to read.  Eventually I&#8217;ll get this junk over on <a href="http://github.com/arlaneenalra">github.</a></p>
+]]></content:encoded>
+							<wfw:commentRss>https://chrissalch.com/blog/2012/04/24/mysql-backup-script/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						<post-id xmlns="com-wordpress:feed-additions:1">79</post-id>	</item>
+		<item>
+		<title>How do you stack up?</title>
+		<link>https://chrissalch.com/blog/2012/03/26/how-do-you-stack-up/</link>
+				<comments>https://chrissalch.com/blog/2012/03/26/how-do-you-stack-up/#respond</comments>
+				<pubDate>Mon, 26 Mar 2012 14:36:25 +0000</pubDate>
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+				<category><![CDATA[Programming]]></category>
+
+		<guid isPermaLink="false">http://chrissalch.com/?p=64</guid>
+				<description><![CDATA[A little quiz I found that seemed fun. You can find the quiz itself at &#8216;Hello World&#8217;: Programming Language Quiz. How did you do?]]></description>
+								<content:encoded><![CDATA[<p>A little quiz I found that seemed fun.<br />
+<a href="http://chrissalch.com/wp-content/uploads/2012/03/DangerouslyOverinformed.png"><img class="alignnone size-medium wp-image-63" title="DangerouslyOverinformed" src="http://chrissalch.com/wp-content/uploads/2012/03/DangerouslyOverinformed-300x297.png" alt="" width="300" height="297" srcset="https://chrissalch.com/wp-content/uploads/2012/03/DangerouslyOverinformed-300x297.png 300w, https://chrissalch.com/wp-content/uploads/2012/03/DangerouslyOverinformed-150x150.png 150w, https://chrissalch.com/wp-content/uploads/2012/03/DangerouslyOverinformed.png 553w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>You can find the quiz itself at <a href="http://http://www.infoworld.com/d/application-development/hello-world-programming-languages-quiz-188874?quizkey=df60171a9d8e4741931cb48af0b78e92">&#8216;Hello World&#8217;: Programming Language Quiz</a>.  How did you do?</p>
+]]></content:encoded>
+							<wfw:commentRss>https://chrissalch.com/blog/2012/03/26/how-do-you-stack-up/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						<post-id xmlns="com-wordpress:feed-additions:1">64</post-id>	</item>
+		<item>
+		<title>Strange Numbers</title>
+		<link>https://chrissalch.com/blog/2012/01/21/strange-numbers/</link>
+				<comments>https://chrissalch.com/blog/2012/01/21/strange-numbers/#respond</comments>
+				<pubDate>Sat, 21 Jan 2012 07:33:23 +0000</pubDate>
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+				<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Software Archaeology]]></category>
+
+		<guid isPermaLink="false">http://chrissalch.com/?p=22</guid>
+				<description><![CDATA[I&#8217;ll have more on The Empty a little latter. This little Gem took so much to figure out that I had to write it up. I&#8217;ve been working on a data extraction/conversion project for a friend of mine and ran into a problem dealing with something that looked like a floating point number. C might [&#8230;]]]></description>
+								<content:encoded><![CDATA[<p>I&#8217;ll have more on <a href="http://chrissalch.com/?p=13" title="The Empty"> The Empty</a> a little latter.  This little Gem took so much to figure out that I had to write it up.</p>
+<p>I&#8217;ve been working on a data extraction/conversion project for a friend of mine and ran into a problem dealing with something that looked like a floating point number. C might have been a reasonable choice, but would likely have cost me time while I am figuring out how the data records are actually stored. Perl has this nifty little command called <a href="http://perldoc.perl.org/functions/pack.html">pack</a> that makes pulling data out of binary blocks relatively easy. Besides, its a great deal easier to work with a script that doesn&#8217;t segfault every time you get things just a little off.</p>
+<p>The particular piece of software in question was written around the mid 80s to 90s era. From what I&#8217;ve been able to determine it uses some form of flat file database that is highly reminiscent of a C style struct. The file layout is based on fixed sized blocks. A file header, that I have yet to fully decode, occupies the first few blocks of the file, depending on the block size. This means that you have to skip a certain number of blocks that are clobbered by the header record at the start of the file to find the first data block. So far, I&#8217;ve been able to identify a couple of integer formats, a fixed length string format, a single character field, and the villain of this story, a decimal number field. I call it a villain because this thing has turned out to be a bear to extract. Everything I tried failed me until tonight, when I finally figured it out and nearly kicked myself at how simple it actually was.</p>
+<p>Using <a href="http://en.wikipedia.org/wiki/Od_(Unix)">od</a> with a carefully selected range I was able to identify a four byte chunk of data in a record that appeared to correspond to the decimal field in the front end. Since I had a working copy the front end available, finding the field by modifying a record and seeing what changed was easy enough. First I gave the &#8216;f&#8217; option in pack a try and received wildly varying numbers from data displayed in the original application. The &#8216;f&#8217; option should have been correct to decode a 32bit <a href="http://babbage.cs.qc.edu/IEEE-754/">IEEE-754</a> floating point number. From my understanding, if I was looking at a native floating point number then <a href="http://babbage.cs.qc.edu/IEEE-754/">IEEE754</a> should have been what to expect.</p>
+<p>Unfortunately, there was no way that the bytes could be arranged to come anywhere near a <a href="http://babbage.cs.qc.edu/IEEE-754/">IEEE754</a> number. Given how the front end was layed out, I knew that the field was designed to contain a value between 99999.99 and 0.00. It would always display two decimal digits and always max out with 5 digits to the left of the decimal point. If it wasn&#8217;t encoded as a floating point number, maybe they had used an integer to encoded it a as a fixed point value? I tried using &#8216;V&#8217; from <a href="http://perldoc.perl.org/functions/pack.html">pack</a> with similar results to what I had seen when treating the field as a float.</p>
+<p>Just to be thorough, I also tried a few variations of byte order and a trick that had been used to encode block sizes, using to 16bit numbers to store the value rather than a single 32bit number. In the file header, the size of a data block was stored using two little endian 16bit values arranged in the wrong order to decode as a little endian 32bit number. To decode the value, you had to pull out the two 16bit numbers using <a href="http://perldoc.perl.org/functions/pack.html">pack&#8217;s</a> &#8216;v&#8217; option, multiply the high order word by 0x10000, and add them together. No joy there.</p>
+<p>Ok, so maybe what this was some sort of encoded number, say <a href="http://en.wikipedia.org/wiki/Binary-coded_decimal">BCD</a>? If it had been encoded using <a href="http://en.wikipedia.org/wiki/Binary-coded_decimal">BCD</a> then there should have been just enough bits to store 8 digits in an 8bit number. Each byte would contain 2 digits, one in the high nibble (4bits) and the other in the low nibble. More over, if 0x00000000 were 0 then 0x00000001 should have been 0.01 and 0.10 would have been 0x00000010. I gave it a try and immediately concluded that <a href="http://en.wikipedia.org/wiki/Binary-coded_decimal">BCD</a> was not he encoding being used. 0.01 came out as 0x00000004 instead and 0.10 came out as 0x0000002D.</p>
+<p>Somewhere in here, I think my head exploded. Having data that made absolutely no sense with anything that seemed remotely plausible, I set to get a sample of values and their encodings for comparison. That lead me to the following:</p>
+<table>
+<tr>
+<th>Value</th>
+<th>Encoded</th>
+<th>Step</th>
+</tr>
+<tr>
+<td>0.00</td>
+<td>00</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.01</td>
+<td>04</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.02</td>
+<td>09</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.03</td>
+<td>0d</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.04</td>
+<td>12</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.05</td>
+<td>16</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.06</td>
+<td>1b</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.07</td>
+<td>1f</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.08</td>
+<td>24</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.09</td>
+<td>28</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.1</td>
+<td>2d</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.11</td>
+<td>31</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.12</td>
+<td>36</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.13</td>
+<td>3a</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.14</td>
+<td>3f</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.15</td>
+<td>44</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.16</td>
+<td>48</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.17</td>
+<td>4d</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.18</td>
+<td>51</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.19</td>
+<td>56</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.2</td>
+<td>5A</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.21</td>
+<td>5F</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.22</td>
+<td>63</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.23</td>
+<td>68</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.24</td>
+<td>6C</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.25</td>
+<td>71</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.26</td>
+<td>75</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.27</td>
+<td>7A</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.28</td>
+<td>7F</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.29</td>
+<td>83</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.3</td>
+<td>88</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.31</td>
+<td>8C</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.32</td>
+<td>91</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.33</td>
+<td>95</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.34</td>
+<td>9A</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.35</td>
+<td>9E</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.36</td>
+<td>A3</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.37</td>
+<td>A7</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.38</td>
+<td>AC</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.39</td>
+<td>b0</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.40</td>
+<td>b5</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.41</td>
+<td>b9</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.42</td>
+<td>be</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.43</td>
+<td>c3</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.44</td>
+<td>c7</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.45</td>
+<td>cc</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.46</td>
+<td>d0</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.47</td>
+<td>d5</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.48</td>
+<td>d9</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.49</td>
+<td>de</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.5</td>
+<td>e2</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.51</td>
+<td>e7</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.52</td>
+<td>eb</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.53</td>
+<td>f0</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.54</td>
+<td>f4</td>
+<td>5</td>
+</td>
+<tr>
+<td>0.55</td>
+<td>f9</td>
+<td>4</td>
+</td>
+<tr>
+<td>0.56</td>
+<td>fe</td>
+<td>*</td>
+</td>
+</table>
+<p>The first thing to notice here is the step column.  It represents the difference between the value on that row and the one right after it.  If you don&#8217;t look too closely, the encoded values look like they have an alternating step between 4 and 5.  At first glance, you should be able take the encoded value for any number in this sequence and get a 4 or 5 from the that value mod 9.  I pulled up <a href="http://en.wikipedia.org/wiki/Dc_(Unix)">dc</a> and gave it a shot with the value for 0.56:</p>
+<pre>
+$ dc
+16 i FE 9 % p
+2
+</pre>
+<p>This result meant that somewhere in the list it was doubling up with either to 5&#8217;s steps or two for steps&#8217;s happening right next to each other.  If you look closely at the table, you&#8217;ll see that 0.26 and 0.27 ( along with a couple of other values) do indeed have a step of 5 one right after the other.</p>
+<p>It didn&#8217;t hit me until a latter that I had seen a sequence of numbers like this one before.  A long time ago, when the only programming language I knew was <a href="http://www.google.com/search?sourceid=chrome&#038;ie=UTF-8&#038;q=GW+Basic">BASIC</a>, I wrote a little program to draw lines, pixel by pixel on the screen.  Of course, raster displays cannot display a completely clean line by their very nature, they always have a touch of stair step on any line that is not purely vertical or horizontal. If the slope of your line is not an integer value, then the individual line segments that make up a line could easily have lengths in the longer axis like these.</p>
+<p>On a hunch, I took the highest number that could be displayed in the front end 99999.99 and rounded up to 100000.00 to make a clean number and setup a ratio with the encoded value for that number.  The rounding decision was purely arbitrary, though it seemed to work out ok in the end.  The net result, after reducing by common factors,  was the fraction 1000/4536.  Surprisingly, this worked.  I tested several conversions, calculating out what the result should going from a decimal to the encoded value and an encoded value to a decimal an every case I checked came out correct.  I coded it up in perl and ran a test extraction. IT WORKED!</p>
+<p>It looks like whoever designed the application used that ratio to map the range of 0-100000.00 to a set of integer values.  Figuring this one out had me giddy for the rest of the evening.  Now if only I could crack the date format . . . . .</p>
+]]></content:encoded>
+							<wfw:commentRss>https://chrissalch.com/blog/2012/01/21/strange-numbers/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						<post-id xmlns="com-wordpress:feed-additions:1">22</post-id>	</item>
+		<item>
+		<title>Converting 2DA Files to Something More Useful &#8211; RePost</title>
+		<link>https://chrissalch.com/blog/2009/04/05/converting-2da-files-to-something-more-useful-repost/</link>
+				<comments>https://chrissalch.com/blog/2009/04/05/converting-2da-files-to-something-more-useful-repost/#respond</comments>
+				<pubDate>Sun, 05 Apr 2009 16:46:40 +0000</pubDate>
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+				<category><![CDATA[Old Blog]]></category>
+		<category><![CDATA[Programming]]></category>
+		<category><![CDATA[Software Archaeology]]></category>
+
+		<guid isPermaLink="false">http://chrissalch.com/?p=129</guid>
+				<description><![CDATA[Note:This is something I wrote way back in April of 2009 on my blog at kc5vzm.com.  While checking on google analytics, I noticed that the old link was still being referenced and decided that I should probably do something to keep it live, at least for the moment.  So, here you go! A friend of [&#8230;]]]></description>
+								<content:encoded><![CDATA[<p><em><strong>Note:</strong>This is something I wrote way back in April of 2009 on my blog at kc5vzm.com.  While checking on google analytics, I noticed that the old link was still being referenced and decided that I should probably do something to keep it live, at least for the moment.  So, here you go!</em></p>
+<p>A friend of mine mentioned he had problem that I might be able to help him with. He had 575 data files on a somewhat lax format. In fact, the disparities between various data files would seem to indicate that the files were hand written rather than generated using a tool or specialized editor. The large number of file and relative inefficiency of dealing with them in their native formats brings up the question of alternative means to store the data. Said friend happens to be able to talk to a <a href="http://www.mysql.com">MySql</a> database from within the <a href="http://nwn.bioware.com/">Never Winter Nights</a> scripting language. To make a long story short my friend asked for a tool to take his collection of 575 2DA files and convert them into an SQL script which could be loaded into a MySql database. So, that&#8217;s exactly what I gave him.</p>
+<p>Besides being a reasonably simple task to accomplish, this project gave me a chance to take a look at a very simple <a href="http://maven.apache.org/">Maven</a> managed build. The request was for a java tool specifically (my first choice for something of this nature would have been PERL) to allow for ease of distribution and portability. C/C++ while reasonably portable if you have a sane build system, compiler, and know a touch about what you are doing require that the end user either be given binaries or have a similar sane build system, compiler, and know what you were attempting to do. PERL, which is significantly more portable and provides a reasonably common runtime environment, has a high barrier to entry on the Windows platform. There are some nice <a href="http://www.activestate.com/activeperl/">commercial installs</a> and a few open source projects, such as <a href="http://strawberryperl.com/">Strawberry PERL</a> or <a href="http://vanillaperl.com/">Vanilla PERL</a>, but that is a little much for the average user. Java, the hulking beast that it is, runs just about anywhere with very little prodding, exists on most Windows based systems and is not very difficult to get on UNIX, and will do most of what was needed.</p>
+<p>The goals of this particular project are relatively simple:</p>
+<ul>
+<li>Convert a valid Bioware 2DA file or directory of files into a reasonable SQL script.</li>
+<li>Create appropriate tables within the SQL database to match the contents of the 2DA file.</li>
+<li>Create a load script to load data into the created tables.</li>
+</ul>
+<p>I had a few other things that I would have liked to and still may find a way to pull into the project latter on. Unfortunately, about four hours of the time that I meant to be coding was occupied in the vain attempt to counter act a rather nasty headache. When my head finally did clear up, time constraints left a few of my planed features, a nice &#8216;Wizard&#8217; or &#8216;Druid&#8217; like GUI, laying on the chopping room floor. Besides, command line apps are so much simpler to use in the long run and graphical apps are such a GUI mess. (:wink:)</p>
+<p>For those who are terribly interested in seeing some code I will later deny to have written, you can take a look at the <a href="http://git.kc5vzm.com/?p=2daLoader.git;a=summary">git</a> repository. This is barely something that I would consider an alpha. Really and truthfully, it is more of a proof of concept in dire need or refactoring/design to make it more than trivially useful.</p>
+<p>The 2DA file specification is available from Bioware via the following <a href="http://nwn.bioware.com/developers/">link</a>, towards the bottom of the page. Unfortunately, the data I was given as an example, does not match the specification very well. The specification states:</p>
+<ul>
+<li>The first row contains a string specifying the 2DA version, &#8216;2DA V2.0&#8217; for the files I was given.</li>
+<li>The second line should contain nothing or an optional &#8216;DEFAULT:&#8217; value clauses to be provided when the requested row does not exist.</li>
+<li>The third line contains column names separated by white space with the first column, an index column, ignored. While not explicitly stated, it appears that there must be at least one space to delineate the first column.</li>
+<li>From the fourth line each line consists of white space delimited columns.</li>
+<li>Values in the data set that contain spaces must be quoted with the &#8216;&#8221;&#8216; character.</li>
+<li> &#8216;****&#8217; is treated as a special data value similar to a database null.</li>
+<li>The index column is re-indexed by the existing game tools.</li>
+</ul>
+<p>While significantly simplified, that about covers the relevant parts of the specification. In reality, the data set I was given as a test didn&#8217;t quite match this in several aspects. Here are a few of the more annoying things that I discovered:</p>
+<ul>
+<li>The furthest right data column appears to be allowed to contain spaces without quoting.</li>
+<li>Five &#8216;*&#8217; characters are sometimes used rather than four.</li>
+<li>A row containing now column data but an index appears to be ignored.</li>
+</ul>
+<p>If the data files I was handed are actually used as was described the parsing code used is very lax about data validation. Really and truly, this is more of a curse than anything else. Lack of data validation will lead to more problems in the long run than letting your developers build crappy content files. Real systems have a tendency to be annoying that way.</p>
+<p>Parsing out this kind of data is not really all that difficult. Most of the parsing can be handled by the java.lang.String.split function and an amazingly short regular expression. Dealing with quoted strings is a little more difficult and required looping through a character array to parse properly. I&#8217;m pretty sure there is a better way to accomplish that part but, as stated, this code is little better than a proof of concept. Thankfully, none of the data set I was dealing with had any DEFAULT clauses to deal with and this code ignores that feature.</p>
+<p>Once the entire dataset for a file is loaded into an internal representation, SQL generation is accomplished via simple string combination with a little sanitizing for the &#8216; character and strange column names (&#8216;%&#8217;). The current implementation takes this one step further and parse a directory of 2DA files, loading them all into memory at one time. This is definitely not an ideal situation and will eventually be corrected. The data set really should be parsed one file at a time to avoid potential issues with memory usage.</p>
+<p>Unfortunately, I don&#8217;t have a good way to avoid loading the entirety of a single file right now. The code is attempting to make guesses about data types based on the data it finds in a given column. If all of the data in a column is parsable by Integer.parseInt then the column is considered to be an SQL INTEGER. If all of the data in a column is parsable by Double.paresDouble then that column is considered to be an SQL DECIMAL. If neither of those are true or every value in the column is the special null string then the column is considered to be a VARCHAR with a size equal to the longest value in the column. This is definitely very crude and possibly error prone. It does seem to produce a loadable script with the current test data set though.</p>
+<p><em><strong>Note:</strong>For anyone interested in actually using this monstrosity you are perfectly welcome to do so. Just keep in mind that I don&#8217;t make any promises about the quality of this code or the resultant data set. If you do come across a bug, feel free to drop a line to <a href="mailto:emeraldd.chris@gmail.com">emeraldd.chris@gmail.com</a> with <strong>2daLoader</strong> in the subject line and I&#8217;ll see what can be done. A binary version of the file can be downloaded from:<br />
+</em><br />
+<a href="http://chrissalch.com/wp-content/uploads/2012/05/2daLoader-1.0-SNAPSHOT-jar-with-dependencies.zip">2daLoader-1.0-SNAPSHOT-jar-with-dependencies</a></p>
+<p>Since Jar files are in actuality just crafted zip files, my CMS is currently treating them as zip files. This means that you will need to change the file extension back to .jar when you download the file. I hope to have this little issue corrected sometime soon though.</p>
+<p>To run the application, just start a command window and enter a command line similar to this:</p>
+<pre class="brush: bash; title: ; notranslate">
+ java -jar 2daLoader-1.0-SNAPSHOT.jar &lt;path to directory containing 2da files&gt;
+</pre>
+<p>After pressing return, you should see a large number of logging lines scrolling by telling more than you ever wanted to know about what the application is doing. Keep in mind, this can take a long time for a large number of files. If it does not work as expected, make sure you have entered the correct file and path names. The current version will produce an output file name <strong>buildSql.sql</strong> in the current directory. One of the things I&#8217;d like to add latter is a means of specifying the output file.</p>
+<p>In any event, have fun!</p>
+]]></content:encoded>
+							<wfw:commentRss>https://chrissalch.com/blog/2009/04/05/converting-2da-files-to-something-more-useful-repost/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+						<post-id xmlns="com-wordpress:feed-additions:1">129</post-id>	</item>
+	</channel>
+</rss>
