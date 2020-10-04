@@ -27,7 +27,8 @@ googleAnalytics = "UA-28271605-1"
   # Metadata mostly used in document's head
   # description = ""
   # images = [""]
-  themeColor = "#494f5c"
+  #themeColor = "#494f5c"
+  themeColor = "#292f3c"
 
   homeSubtitle = "Personal content from Chris Salch."
   customCSS = [ "css/blog.css" ]
