@@ -9,7 +9,7 @@ all: build
 
 build:
 	docker build $(BUILD_FLAGS) --tag $(IMAGE) --tag $(IMAGE):$(NOW) .
-	echo $(NOW) >> $(TAG_PATH)/$(subst /,-,$(IMAGE))
+	echo $(NOW) > $(TAG_PATH)/$(subst /,-,$(IMAGE))
 
 push: build
 	docker push $(IMAGE)
