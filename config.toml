@@ -1,11 +1,11 @@
 baseURL = "https://chrissalch.com/"
 languageCode = "en-us"
 title = "f(x) = x"
-theme = "hermit-v2"
+theme = "hermit-V2"
 
 googleAnalytics = "G-HVVWL3DYB5"
 
-[author]
+[params.author]
   name = "Chris Salch"
 
 [blackfriday]
@@ -33,7 +33,7 @@ googleAnalytics = "G-HVVWL3DYB5"
   homeSubtitle = "Personal content from Chris Salch."
   customCSS = [ "css/blog.css" ]
 
-  footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> '
+  footerCopyright = '<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
@@ -48,16 +48,16 @@ googleAnalytics = "G-HVVWL3DYB5"
  
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
-  [[params.social]]
+  [[params.socialLinks]]
     name = "github"
     url = "https://github.com/arlaneenalra"
-  [[params.social]]
+  [[params.socialLinks]]
     name = "instagram"
     url = "https://www.instagram.com/arlaneenalra/"
-  [[params.social]]
+  [[params.socialLinks]]
     name = "twitter"
     url = "https://twitter.com/arlaneenalra"
-  [[params.social]]
+  [[params.socialLinks]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/chris-salch-94a6784/"
 

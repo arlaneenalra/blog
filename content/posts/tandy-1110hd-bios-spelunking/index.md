@@ -1,7 +1,7 @@
 ---
 title: "Tandy 1110HD Laptop - Spelunking Through 16-bit Assembly"
 date: 2024-05-30T10:15:04-05:00
-draft: false
+draft: true
 toc: false
 images:
 tags: 
