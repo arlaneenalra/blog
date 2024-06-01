@@ -1,9 +1,9 @@
 baseURL = "https://chrissalch.com/"
 languageCode = "en-us"
 title = "f(x) = x"
-theme = "hermit"
+theme = "hermit-v2"
 
-googleAnalytics = "UA-28271605-1"
+googleAnalytics = "G-HVVWL3DYB5"
 
 [author]
   name = "Chris Salch"

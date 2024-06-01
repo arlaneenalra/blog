@@ -1,5 +1,6 @@
-FROM klakegg/hugo:onbuild AS hugo
+FROM floryn90/hugo:ext-onbuild AS hugo
 
+# FROM klakegg/hugo:onbuild AS hugo
 FROM nginx
 
 EXPOSE 80
