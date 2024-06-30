@@ -118,7 +118,7 @@ I did eventually get this thing booting off the internal drive. But it took a bi
 
 I plan to do a follow up here and dig more into what the BIOS is actually doing under the hood to see if I can figure out why it doesn't like the XTA2SD card and potentially see if I can get my machine to allow a slightly larger HD size (20mb is just too small).
 
-If I can get this working, I might look into finding and Tandy 1000 HX machine. I grew up with an EX and the HX is a variant that included a hard drive and 720k floppy instead of the single 360k drive. Though that would require a dedicated place to set the machine up and a replacement for the old CRT displayl.
+If I can get this working, I might look into finding and Tandy 1000 HX machine. I grew up with an EX and the HX is a variant that included a hard drive and 720k floppy instead of the single 360k drive. Though that would require a dedicated place to set the machine up and a replacement for the old CRT display.
 
 I'm also thinking about battery replacements for the Tandy 1110HD. It's likely that the 9.5v supply is mostly to allow for charging the 6v sealed lead acid battery the machine came with. In theory, there should be a means to adapt a modern powerbank to fit the internal power socket and power the machine. In theory.
 
