@@ -166,11 +166,6 @@ If you backtrack from that code a bit we find an int 13h call, which is a disk i
 
 I think I actually started searching for the 320h scalar value hunting for writes to the hard drive controller ports to actually find this code, but I've slept since then and don't remember exactly how I traced it out. Ghidra can trace where addresses are referenced pretty easily once it's analyzed the code so there were portions of this I traced by following the instructions and others I backtracked by looking at what referenced particular labels.
 
-{{<
-    figure src="images/bios-init-hdd.png"
-    title="Ghidra screenshot of init_hdd function call."
->}}
-
 This is definitely where we want to be though. Unfortunately, this post is getting a bit long, so I'm going to cut off here and leave dissecting the `init_hdd` function until next time.
 
 See you then!
